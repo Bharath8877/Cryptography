@@ -14,11 +14,16 @@ public class Caesar_Cipher
 		for(int i=0;i<enc.length();i++)
 		{
 			c=enc.charAt(i);
-			if(c=='x')dec=dec+'A';
-			else if(c=='y')dec=dec+'B';
-			else if(c=='z')dec=dec+'C';
-			else if(c==' ')dec=dec+' ';
-			else dec=dec+(char)((c+3));
+			if(Character.isLetter(c))
+			{	
+				if(c=='x')dec=dec+'A';
+				else if(c=='y')dec=dec+'B';
+				else if(c=='z')dec=dec+'C';
+				else if(c==' ')dec=dec+' ';
+				else dec=dec+(char)((c+3));
+			}
+			else
+				dec=dec+c;
 		}
 		dec=dec.toUpperCase();
 		System.out.print(dec);
